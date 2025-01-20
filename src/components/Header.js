@@ -9,6 +9,7 @@ export const Header = () => {
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("darkMode")) || true
   );
+  const navigate = useNavigate();
   useEffect(() => {
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
     if (darkMode) {
@@ -17,6 +18,13 @@ export const Header = () => {
       document.documentElement.classList.remove("dark");
     }
   }, [darkMode]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const queryTerm = event.target.search.value;
+    event.target.reset();
+    return navigate(`/search?q=${queryTerm}`);
+  };
 
   const activeClass =
     "text-base block py-2 pr-4 pl-3 text-white bg-blue-700  md:bg-transparent md:text-blue-700 md:p-0 dark:text-white";
@@ -87,12 +95,15 @@ export const Header = () => {
 
                 <span className="sr-only">Search icon</span>
               </div>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <input
                   type="text"
                   id="search-navbar"
                   name="search"
-                  className="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border
+                   border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700
+                   dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500
+                   dark:focus:border-blue-500"
                   placeholder="Search..."
                   autoComplete="off"
                 />
@@ -146,12 +157,14 @@ export const Header = () => {
                   ></path>
                 </svg>
               </div>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <input
                   type="text"
                   id="search-navbar"
                   name="search"
-                  className="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  className="block p-2 pl-10 w-full text-gray-900 bg-gray-50 rounded-lg border
+                   border-gray-300 sm:text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700
+                    dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Search..."
                   autoComplete="off"
                 />

@@ -3,7 +3,7 @@ import { useFetch } from "../components/Hook/useFetch";
 
 export function MovieList({ apiPath, title }) {
   const { data: movies } = useFetch(apiPath);
-  console.log(apiPath);
+  // console.log(apiPath);
   return (
     <main>
       <section className="max-w-7xl mx-auto py-7">

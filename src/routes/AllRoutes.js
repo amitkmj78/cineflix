@@ -32,7 +32,10 @@ const AllRoutes = () => {
           element={<MovieList apiPath="movie/upcoming" title="Upcoming" />}
         ></Route>
         <Route path="/movies/:id" element={<MovieDetail />}></Route>
-        <Route path="/search" element={<Search />}></Route>
+        <Route
+          path="search"
+          element={<Search apiPath="search/movie" title="Search" />}
+        ></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
