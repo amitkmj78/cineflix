@@ -64,7 +64,7 @@ export function MovieDetail() {
               target="_blank"
               rel="noreferrer"
             >
-              <p className="text-blue-600/100"> {movie.imdb_id}</p>
+              <span className="text-blue-600/50">Check on IMDB</span>
             </a>
           </p>
         </div>

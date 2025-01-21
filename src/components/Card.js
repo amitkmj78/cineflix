@@ -8,10 +8,7 @@ export function Card({ movie }) {
     : "";
 
   return (
-    <div
-      key={movie.id}
-      className="max-w-80 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-3"
-    >
+    <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-3">
       <Link to={`/movie/${id}`}>
         <img className="rounded-t-lg" src={image} alt="" />
       </Link>
