@@ -58,13 +58,13 @@ export function MovieDetail() {
           </p>
 
           <p className="my-4">
-            <span className="mr-2 font-bold">IMDB Code:</span>
+            <span className="mr-2 font-bold">IMDB Link:</span>
             <a
               href={`https://www.imdb.com/title/${movie.imdb_id}`}
               target="_blank"
               rel="noreferrer"
             >
-              {movie.imdb_id}
+              <p className="text-blue-600/100"> {movie.imdb_id}</p>
             </a>
           </p>
         </div>
