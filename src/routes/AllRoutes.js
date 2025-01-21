@@ -14,6 +14,7 @@ const AllRoutes = () => {
       <Routes>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+
         <Route
           path="/"
           element={<MovieList apiPath="movie/now_playing" title="Home" />}
@@ -31,7 +32,7 @@ const AllRoutes = () => {
           path="/Upcoming"
           element={<MovieList apiPath="movie/upcoming" title="Upcoming" />}
         ></Route>
-        <Route path="/movies/:id" element={<MovieDetail />}></Route>
+        <Route path="movie/:id" element={<MovieDetail />}></Route>
         <Route
           path="search"
           element={<Search apiPath="search/movie" title="Search" />}

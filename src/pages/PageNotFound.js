@@ -1,5 +1,9 @@
 import React from "react";
-
+import pagenotfound from "../assets/images/pagenotfound.png";
 export function PageNotFound() {
-  return <main>Page Not Found</main>;
+  return (
+    <main>
+      <img src={pagenotfound}></img>
+    </main>
+  );
 }
